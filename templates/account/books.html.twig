@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de mes réservations{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+    
+        <h1 class="text-center mt-5">Mes réservations</h1>
+
+        <div class="bg-light p-5 my-5">
+            <h4 class="h5 text-center">Retrouvez ici tout l'historique de vos réservations</h4>
+        </div>
+        {% for book in app.user.books %}
+            <div class="row border-bottom border-light mt-5 mb-5">
+               
+                <div class="col-6 offset-2 mb-3">
+                    
+                    <p>Réservation n°{{ book.id }} :</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ book.startDate| date('d/m/Y') }}</p>
+                </div>
+                <div class="col-2 align-self-center">
+                    <a href="{{ path('book_show',{'id':book.id}) }}" class="btn btn-warning btn btn-sm">Détails</a>
+                </div>
+            </div>
+        {% endfor %}
+    <div class="alert alert-light text-center mt-5">
+                <a href="{{ path('account_home') }}" class="btn btn-primary btn-block">Retour</a>
+                </div>
+    </div>
+
+
+{% endblock %}
+

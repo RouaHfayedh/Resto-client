@@ -1,0 +1,36 @@
+
+ 
+ 
+ {% set url=path('ads_single',{'slug':ad.slug}) %}
+
+            <div class="col-md-3 alpha omega">
+            
+                
+                
+                    
+                    
+                        <div id="portfolio">
+                            <a href="{{ url }}">
+                                <img src="{{ad.coverImage}}" alt="{{ad.title}}" style="height:280px;width:320px;display:block;">
+                                <figcaption>
+                                    <h5>{{ad.title}}</h5>
+                                    <p>{{ad.introduction}}</p>
+                                </figcaption> 
+                            </a>
+                            
+                            
+                            
+                        </div>
+                
+                   
+
+                
+            
+            </div>
+
+
+
+             
+       
+            
+          

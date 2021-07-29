@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation N° {{ booking.id }} {% endblock %}
+
+{% block body %}
+
+    <main class="container">
+
+        {% if app.request.query.get('alert') %}
+
+            <div class="alert alert-success">
+                <h4 class="alert-heading">
+                    Félicitation !
+                </h4>
+                <p>Votre commande est confirmée.</p>
+            </div>
+
+        {% endif %}
+
+        <div class="row mt-4">
+            <div class="col">
+                <div class="alert alert-light">
+                    <h3>Détails : </h3>
+                    <dl class="row">
+                        <dt class="col-md-5">Numéro de reservation :</dt>
+                        <dd class="col-md-7">{{ booking.id }}</dd>
+                        <dt class="col-md-5">Date de réservation :</dt>
+                        <dd class="col-md-7">{{ booking.startDate | date('d/m/Y') }}</dd>
+                        <dt class="col-md-5">Horaire demandé :</dt>
+                        <dd class="col-md-7">{{ booking.time | date('H:i') }}</dd>
+                        <dt class="col-md-5">Nombre de couverts :</dt>
+                        <dd class="col-md-7">{{ booking.guest }}</dd>
+                        <dt class="col-md-5">Prix par personne :</dt>
+                        <dd class="col-md-7">{{ booking.ad.price }} &euro;</dd>
+                        <dt class="col-md-5">Montant total :</dt>
+                        <dd class="col-md-7">{{ booking.amount }} &euro;</dd>
+                        <dt class="col-md-5">Adresse de livraison :</dt>
+                        <dd class="col-md-6">{{ booking.comment | default('Aucun commentaire')}}</dd>
+                    </dl>
+                    
+                    
+
+                    <div class="alert alert-light" id="comment">
+
+                        <h5 class="alert-heading text-center">Votre avis nous intéresse !</h5>
+                        {% if date() > date(booking.startDate) %}
+                            {% set comment = booking.ad.commentFromAuthor(app.user) %}
+                            
+                                {% if comment is not null %}
+
+                                    <blockquote>{{ comment.content }}</blockquote>
+                                    <strong>Note : </strong>{% include 'inc/rating.html.twig' with {'rating':comment.rating} %}
+
+                                {% else %}
+
+                                    {{ form_start(form) }}
+
+                                    {{ form_widget(form) }}
+                                         <button type="submit" class="btn btn-primary">Envoyer</button>
+                                    {{ form_end(form) }}
+
+                                {% endif %}
+
+                        {% else %}     
+                            <p class="alert alert-warning">Satisfait ou mécontent ? Revenez donnez votre avis !</p>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="alert alert-light">
+                    <h3 class="alert-heading">Votre commande :</h3>
+                    <h5><em><a href="{{ path('ads_single',{'slug':booking.ad.slug}) }}">{{ booking.ad.title }}</a></em></h5>
+                    <img src="{{ booking.ad.coverImage }}" alt="image de couverture de {{ booking.ad.title }}" class="img-fluid">
+                    <div class="px-3 mt-3">
+                        {{ booking.ad.content | raw }}
+                    </div>
+                    <a href="{{ path('ads_single',{'slug':booking.ad.slug}) }}" class="btn btn-outline-primary">+ de détails</a>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-light text-center mt-5">
+                <a href="{{ path('account_bookings') }}" class="btn btn-primary btn-block">Retour</a>
+                </div>
+    
+    
+    
+    
+    </main>
+
+{% endblock %}

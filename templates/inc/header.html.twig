@@ -1,0 +1,137 @@
+<!-- header -->
+        <header id="header" class="row">
+            <nav class="col-md-4 navbar navbar-expand-lg navbar-dark navleft">
+                 <div class="navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <i class="fa fa-phone" aria-hidden="true"></i><span>00-000-000</span>
+                            <i class="fa fa-phone" aria-hidden="true"></i><span>99-999-999</span>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="col-md-4 navbar navbar-expand-lg navbar-dark navmiddle">
+                 <div id="navbarColor01">
+                    <ul class="navbar-nav ml-auto">  
+                        <li class="nav-item dropdown">       
+                            <i class="fa fa-envelope"></i><span class="align-self-left"><a href="#">email@email.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            
+            <nav class="col-md-4 navbar navbar-expand-lg navbar-dark navhead pr-5">
+            
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+               
+                <ul class="navbar-nav ml-auto">
+
+                        {% if app.user %}
+
+                            <li class="nav-item dropdown">
+
+                                <a href="#" class="nav-link dropdown-toggle" id="accountDropdownLink" data-toggle="dropdown">
+                                    <img src="{{ app.user.avatar }}" alt="Avatar de {{ app.user.fullName }}" class="avatar avatar-small">
+                                    <span class="ml-1">{{ app.user.fullName }}</span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right drophead" aria-labelledby="accountDropdownLink">
+                    
+                                <a class="dropdown-item" href="{{ path('account_home') }}">Mon compte</a>
+
+                                <br>
+                        
+                                <a class="dropdown-item" href="{{ path('account_profile') }}">Editer mon profil</a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <br>
+
+                                <a class="dropdown-item" href="{{ path('account_books') }}">Mes réservations</a>
+
+                                <br>
+
+                                <div class="dropdown-divider"></div>
+
+                                <br>
+                                
+                                <a class="dropdown-item" href="{{ path('account_bookings') }}">Mes commandes</a>
+
+                                <br>
+
+                                <div class="dropdown-divider"></div>
+                    
+                                <a class="dropdown-item" href="{{ path('account_logout') }}">Deconnexion</a>
+                            </li>
+                        
+                        {% else %}
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('account_register') }}">Inscription</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('account_login') }}">Connexion</a>
+                            </li>
+
+                         {% endif %}
+
+                    </ul>
+                </nav>
+            
+     
+        </header>
+        
+        <section id="accueil" class="col-md-8 offset-md-2">
+          <div class="barremenuhaut">
+            <div class="row align-items-center justify-content-center px-3 py-3">
+              <div class="">
+                <a href="{{ path('homepage') }}"><img src="../img/logo.png"/></a>
+              </div>
+              <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link text-dark" href="{{ path('homepage') }}">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Nos spécialités </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ path('homepage') }}#petit-dejeuner">Petit-Déjeuner</a>
+                        <a class="dropdown-item" href="{{ path('homepage') }}#dejeuner">Déjeuner</a>
+                        <a class="dropdown-item" href="{{ path('homepage') }}#diner">Diner</a>
+                        <a class="dropdown-item" href="{{ path('homepage') }}#fastfood">Fast-Food</a>
+                      <div class="dropdown-divider"></div>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-dark" href="{{ path('homepage') }}#portfolio">Nos plats</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-dark" href="{{ path('homepage') }}#team">Notre équipe</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-dark" href="{{ path('homepage') }}#reservation">Réservation</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link text-dark" href="{{ path('homepage') }}#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-dark" href="{{ path('homepage') }}#footer">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </section>
+        

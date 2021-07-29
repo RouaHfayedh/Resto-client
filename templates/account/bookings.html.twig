@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de mes réservations{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+    
+        <h1 class="text-center mt-5">Mes commandes</h1>
+
+        <div class="bg-light p-5 my-5">
+            <h2 class="h4 text-center">Retrouvez ici toutes vos commandes en ligne</h2>
+        </div>
+        {% for booking in app.user.bookings %}
+            <div class="row border-bottom border-light mt-5 mb-5">
+                <div class="col-4">
+                    <img src="{{ booking.ad.coverImage }}" alt="Photo de l'annonce {{ booking.ad.title }}" class="img-fluid">
+
+                    {% set comment = booking.ad.commentFromAuthor(app.user) %}
+
+                    {% if comment is not null %}
+
+                        <p class="my-3"><strong>Note : </strong>{% include 'inc/rating.html.twig' with {'rating':comment.rating} %}</p>
+
+                    {% else %}
+
+                        <p class="my-3">Vous n'avez pas encore attribué de note à cette commande</p>
+                        <a href="{{ path('booking_show',{'id':booking.id}) }}#comment">Je donne mon avis</a></p>
+
+                    {% endif %}
+
+                </div>
+                <div class="col-6 mb-3">
+                    
+                    <p>Réservation n°{{ booking.id }} :</p>
+                    <h4 class="h5">{{ booking.ad.title }}</h4><br>
+                    <p>Date de réservation : {{ booking.startDate| date('d/m/Y') }}</p>
+                    <p>Montant total : {{ booking.amount }} &euro;</p>
+                </div>
+                <div class="col-2 align-self-center">
+                    <a href="{{ path('booking_show',{'id':booking.id}) }}" class="btn btn-primary btn btn-sm">Détails</a>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="alert alert-light text-center mt-5">
+                <a href="{{ path('account_home') }}" class="btn btn-primary btn-block">Retour</a>
+                </div>
+    </div>
+
+
+{% endblock %}
+
+      
+                   

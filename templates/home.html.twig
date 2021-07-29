@@ -1,0 +1,311 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+
+  
+<!-- presentation -->
+        <section id="presentation" class="row align-items-center justify-content-center text-center">
+            <h1>Interpellata</h1>
+            <h2>paucis indignitatis</h2> 
+            <p>Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit Voluptatem</p><p> Ac Cusantium Doloremque Laudantium</p>
+            <div class="liens"></div>
+               <div class="etiquette">  
+                    <a href="#">+ Détails</a>
+                </div>
+
+                <div class="row menuhaut">
+                  <div class="col-md-2 offset-md-3 align-self-center">
+                   <img src="img/logo.png" alt="">
+                   </div>
+
+                       <div class="col-md-4 align-self-center">
+                  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                        <a class="navbar-brand" href="#"></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto">
+                            
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Nos Spécialités </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-dark" href="#petit-dejeuner">Petit-Déjeuner</a>
+                                <a class="dropdown-item text-dark" href="#dejeuner">Déjeuner</a>
+                                <a class="dropdown-item text-dark" href="#diner">Diner</a>
+                                <a class="dropdown-item text-dark" href="#fastfood">Fast-Food</a>
+                              </div>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link text-dark" href="#portfolio">Nos Plats</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link text-dark" href="#team">Notre équipe</a>
+                            </li>
+    
+                          </ul>
+                        </div>
+                      </nav>
+                       </div>
+         
+                </div>
+           
+    
+            
+        </section>
+        
+<!--carte menu-->
+        <section id="cartemenu" class="row col-md-8 offset-md-2">
+         <div class="flex text-center titremenu">
+            <h3>Nos spécialités</h3>
+            <h4>Lorem ipsum</h4>
+                  <div class="row justify-content-center cartemenu">   
+                         <div id="petit-dejeuner" class="card mb-3" style="max-width: 540px;">
+                              <div class="row no-gutters carte1">
+                                <div class="col-md-4">
+                                  <img src="img/delicious_1.jpg" class="card-img" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="card-body liencarte">
+                                    <h5 class="card-title">Petit-Déjeuner</h5>
+                                    <p class="card-text textmenu">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <a href="{{ path('book_create') }}">Réserver</a>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                      <div id="dejeuner" class="card mb-3" style="max-width: 540px;">
+                          <div class="row no-gutters">
+                            <div class="col-md-4">
+                              <img src="img/delicious_2.jpg" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body liencarte">
+                                <h5 class="card-title">Déjeuner</h5>
+                                <p class="card-text textmenu">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="{{ path('book_create') }}">Réserver</a>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                     <div id="diner" class="row justify-content-center">
+                         <div class="card mb-3" style="max-width: 540px;">
+                              <div class="row no-gutters carte1">
+                                <div class="col-md-4">
+                                  <img src="img/delicious_3.jpg" class="card-img" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="card-body liencarte">
+                                    <h5 class="card-title">Diner</h5>
+                                    <p class="card-text textmenu">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <a href="{{ path('book_create') }}">Réserver</a>
+                                  </div>
+                                </div>
+                              </div>
+                    </div>
+                      <div id="fastfood" class="card mb-3" style="max-width: 540px;">
+                          <div class="row no-gutters">
+                            <div class="col-md-4">
+                              <img src="img/delicious_4.jpg" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body liencarte">
+                                <h5 class="card-title">Fast-Food</h5>
+                                <p class="card-text textmenu">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="{{ path('book_create') }}">Réserver</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>                  
+                    </div>       
+                </div> 
+            </div>
+        </section>
+        
+        
+        
+        
+        
+        <section id="portfolio" class="row col-md-8 offset-md-2">
+            <div class="flex col-md-12 align-items-center text-center portfolio">
+            <h3>Plats à commander</h3>
+            <h4>Lorem ipsum dolor sit amet edit</h4>
+            <p>Lorem ipsum dolor sit amet, quam!</p>
+            <div class="row  align-items-center justify-content-center folio">
+            {% for ad in ads %}
+
+           {% include 'ad/_ad.html.twig' %}
+
+        {% endfor %}
+        </div>
+        </section>
+        
+        
+        
+<!--equipe-->       
+        <section id="team" class="row col-md-10 offset-md-1 justify-content-center align-items-center text-center">
+            <div class="team">
+                <h3>Notre équipe de </h3>
+                <h4>Chefs</h4>
+                <div class="row teamvignette">
+                    <figure><img src="img/chef-1.jpg" alt="" class="vignette"><figcaption>
+                               <h5>Asbolium supra</h5>
+                               <h6>Asbolium supra dictos</h6>
+                               </figcaption>  </figure>  
+                    <figure><img src="img/chef-3.jpg" alt="" class="vignetteactive"><figcaption>
+                               <h5>Asbolium supra</h5>
+                               <h6>Asbolium supra dictos</h6>
+                               </figcaption>  </figure>
+                    <figure><img src="img/chef-2.jpg" alt="" class="vignette"><figcaption>
+                               <h5>Asbolium supra</h5>
+                               <h6>Asbolium supra dictos</h6>
+                               </figcaption>  </figure>
+                </div>
+            </div>   
+        </section>
+        
+        
+<!--overlay-->
+        <section id="presentation2" class="row overlay justify-content-center align-items-center">
+            <h2>INTERPELATTA PAUCIS</h2>
+        </section>
+        
+        
+        
+        <section id="reservation" class="row justify-content-center">
+             <div class="flex text-center reservation justify-content-center">
+                <h3>Réservation </h3>
+                <h4>Services adaptés à vos envies</h4>
+                <form>
+               
+                      <a href="{{ path('book_create') }}" class="btn btn-primary bouton">Réserver</a>
+                      
+                </form>    
+            </div>
+        </section>
+        
+        
+      
+        
+        
+        
+        
+        
+ <!-- blog -->       
+        <section id="blog" class="row align-items-center justify-content-center text-center">
+        <div class="flex col-md-8 blogtitre">
+            <h3>Notre blog</h3>
+            </div>
+            <div class="flex col-md-6 offset-md-2 blogtitre">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil rem numquam cupiditate magni expedita nulla dolore!</p>
+            </div>
+            <div class="row blogtext">  
+                <div class="card " style="width: 18rem;">
+                      <img src="img/news-1.jpg" class="card-img-top" alt="...">
+                      <div class="card-body ">
+                        <h5 class="card-title">Curabitur Quas Nets</h5>
+                        <h6>10 juin 2018 by Peter Parker</h6>
+                        <p class="card-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut doloremque.</p>
+                        <hr>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                          + Détails
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Lorem ipsum</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                Accusantium dicta beatae quasi, a rerum id perferendis labore ex alias quas.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary text-white"><a href="#">Ouvrir le blog</a></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                      <img src="img/news-2.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Curabitur Quas Nets</h5>
+                        <h6>10 juin 2018 by Peter Parker</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut doloremque.</p>
+                        <hr>
+                         <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                          + Détails
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Lorem ipsum</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                Accusantium dicta beatae quasi, a rerum id perferendis labore ex alias quas.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primarytext-white"><a href="#">Ouvrir le blog</a></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                      <img src="img/news-3.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Curabitur Quas Nets</h5>
+                        <h6>10 juin 2018 by Peter Parker</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aut doloremque.</p>
+                        <hr>
+                         <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                          + Détails
+                        </button>
+                       
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Lorem ipsum</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                Accusantium dicta beatae quasi, a rerum id perferendis labore ex alias quas.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Ouvrir le blog</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+             </div>          
+        </section>
+        
+      
+    
+
+
+
+    {% endblock %}
+    

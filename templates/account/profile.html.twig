@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page de profil{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-5">   
+
+           <h1 class="text-center">Modification du profil</h1>
+
+        {{ form_start(form) }}
+
+            {{ form_widget(form) }}
+
+            <button type="submit" class="btn btn-primary">Mettre à jour votre profil</button>
+            <a href="{{ path('account_home') }}" class="btn btn-secondary">Retour</a>
+
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}

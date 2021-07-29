@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation N° {{ book.id }} {% endblock %}
+
+{% block body %}
+
+    <main class="container">
+    
+        <h1>Récapitulatif de votre réservation</h1><br>
+
+        {% if app.request.query.get('alert') %}
+
+            <div class="alert alert-success">
+                <h4 class="alert-heading">
+                    Félicitation !
+                </h4>
+                <p>Votre réservation est confirmée.</p>
+            </div>
+
+        {% endif %}
+
+        <div class="row mt-4">
+            <div class="col">
+                <div class="alert alert-light">
+                    <h3>Détails : </h3>
+                    <dl class="row">
+                        <dt class="col-md-4">Numéro de réservation :</dt>
+                        <dd class="col-md-8">{{ book.id }}</dd>
+                        <dt class="col-md-4">Date de reservation :</dt>
+                        <dd class="col-md-8">{{ book.startDate | date('d/m/Y') }}</dd>
+                        <dt class="col-md-4">Heure de reservation :</dt>
+                        <dd class="col-md-8">{{ book.time | date('H:i') }}</dd>
+                        <dt class="col-md-4">Nombre de personne :</dt>
+                        <dd class="col-md-8">{{ book.guest }}</dd>
+                        
+                    </dl>
+                  
+
+                    
+
+                </div>
+            </div>
+           
+        </div>
+        <div class="alert alert-light text-center mt-5">
+                <a href="{{ path('account_books') }}" class="btn btn-primary btn-block">Retour</a>
+                </div>
+    
+    
+    
+    
+    </main>
+
+{% endblock %}

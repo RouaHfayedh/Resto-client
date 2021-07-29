@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de réservation{% endblock %}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="h3 mt-3 text-center">Commande en ligne pour le plat :</h1><br>
+        <h3 class="text-center"><small><em>{{ ad.title }}</em></small></h3>
+      
+
+        
+        {{ form_start(form) }}
+
+            <div class=" mt-5">
+                <div class="col">
+                    {{ form_row(form.startDate) }}
+                </div>
+                <div class="col">
+                     {{ form_row(form.time) }}
+                </div>
+                <div class="col">
+                     {{ form_row(form.guest) }}
+                </div>
+                <div class="col">
+                      {{ form_row(form.comment) }}
+                </div>
+                <div class="col">
+                    <h4>Montant de votre commande : <span id="amount">...</span> &euro;</h4>
+                    <span id="guest">0</span> plat(s) à {{ ad.price }} &euro; /personne.
+                </div>
+            </div>
+            <div class="col mt-4">
+            <button type="submit" class="btn btn-warning">Commander !</button>
+            
+
+            <a href="{{ path('ads_single',{'slug':ad.slug}) }}" class="btn btn-secondary">Retour</a>
+            </div>
+        {{ form_end(form) }}
+
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script>
+    
+        $(document).ready(function(){
+
+          $('#booking_guest').on('change',calculateAmount);
+
+        });
+
+        function calculateAmount(){
+            
+            const guest = $('#booking_guest').val() ;
+
+            const amount = guest * {{ ad.price }};
+
+            // insertion des nombres dans la page
+
+            $('#guest').text(guest);
+
+            $('#amount').text(amount.toLocaleString('fr-FR'));
+
+            
+        }
+        
+    
+    </script>
+
+{% endblock %}
+

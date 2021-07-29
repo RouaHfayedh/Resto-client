@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de réservation{% endblock %}
+
+
+
+{% block body %}
+    <div class="container">
+        <h1 class="h3 mt-3 text-center">Reservation</h1>
+
+        
+        {{ form_start(form) }}
+
+            <div class="mt-5 mb-5">
+                <div class="col">
+                    <i class="fa fa-calendar" aria-hidden="true"></i> {{ form_row(form.startDate) }}
+                </div>
+                <div class="col">
+                       <i class="fa fa-history"></i> {{ form_row(form.time) }}
+                </div>
+                <div class="col">
+                     <i class="fa fa-users" aria-hidden="true"></i> {{ form_row(form.guest) }}
+                </div>
+                
+            </div>
+
+            <div class="text-center mt-5">
+            <button type="submit" class="btn btn-warning">Réserver !</button>
+            <a href="{{ path('homepage') }}" class="btn btn-secondary">Retour</a>
+            </div>
+        {{ form_end(form) }}
+
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+    
+
+{% endblock %}

@@ -1,0 +1,7 @@
+miracode_stripe:
+    secret_key: "sk_test_FsFQvnDZCaqYp6DTT1RxgsCE00w3IOk4yo"
+    database:
+        model:
+            charge:   'App\Entity\Charge'   #To store stripe charges
+            card:     'App\Entity\Booking'     #To store stripe cards
+            customer: 'App\Entity\User' #To store stripe customers 

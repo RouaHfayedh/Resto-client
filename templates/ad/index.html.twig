@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos plats{% endblock %}
+
+{% block body %}
+
+<main class="container">
+    <h1 class="mt-5 mb-5 text-center">{{ controller_name }}</h1>
+    
+            <h4 class="text-center">Lorem ipsum dolor sit amet edit</h4><br>
+            <p class="text-center">Lorem ipsum dolor sit amet, quam!</p>
+    <div class="row">
+
+        {% for ad in pagination.data %}
+
+           {% include 'ad/_ad.html.twig' %}
+
+        {% endfor %}
+    </div>
+
+</main>
+
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Détails plat {{ ad.title }} {% endblock %}
+
+{% block body %}
+    <div>
+        <div class="container">
+            <h1>{{ad.title}}</h1>
+            <p>{{ad.introduction}}</p>
+            <p class="h5">{{ad.price}} &euro; /personne</strong></p>
+            <a href="{{ path('booking_create',{'slug':ad.slug}) }}" class="btn btn-warning">Commander !</a>
+            <a href="{{ path('homepage') }}" class="btn btn-primary">Retour</a>
+        </div>:
+    </div>
+
+    <div class="container">
+    
+        <div class="row">
+        
+            <div class="col-md-8 mb-3">
+            
+                {{ad.content|raw}}
+
+                
+
+                        
+
+                        <div>
+                            <img src="{{ad.coverImage }}">
+                        
+                        
+                        </div>
+
+                       
+
+
+                   
+
+                <hr>
+
+                {% if ad.comments| length > 0 %}
+
+                    <h3>Commentaires clients</h3>
+
+                    {% for comment in ad.comments %}
+
+                        <div class="bg-light-rounded">
+                            <p><strong>{{ comment.author.fullName }}</strong> a dit : </p>
+                            <blockquote>{{ comment.content }}</blockquote>
+                        </div>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <h5>Ce plat n'a pas encore été commenté.</h5>
+
+                {% endif %}
+
+            
+            </div>
+
+        </div>
+    
+    </div>
+{% endblock %}
+
+
+
+
+    
+

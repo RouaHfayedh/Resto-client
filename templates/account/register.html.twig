@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+
+    <div class="container py-5 mt-5">   
+
+        <h1>Inscription</h1>
+        
+        {{ form_start(form) }}
+
+            {{ form_widget(form) }}
+
+            <button type="submit" class="btn btn-primary">Confirmer son inscription</button>
+
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}
