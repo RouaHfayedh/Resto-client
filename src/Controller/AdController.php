@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class AdController extends AbstractController
 {
@@ -154,6 +155,35 @@ class AdController extends AbstractController
         $this->addFlash("success","L'annonce {$ad->getTitle()} a bien été supprimée.");
 
         return $this->redirectToRoute("account_home");
+
+    }
+
+/**
+     * @Route("/allAd", name="All_ad")
+     */
+    public function getAll(SerializerInterface $serializer): Response
+    {
+        $ads=$this->getDoctrine()->getRepository(Ad::class)->findAll();
+        $response = new Response( $serializer->serialize(
+            $ads,
+            'json', ['groups' => ['default' ]]
+        ));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
+
+    /**
+     * @Route("/ad/{id}", name="ad_ByID")
+     */
+    public function showOne(SerializerInterface $serializer,$id) : Response
+    {
+        $ad=$this->getDoctrine()->getRepository(Ad::class)->find($id);
+        $response = new Response($serializer->serialize(
+            $ad,
+            'json', ['groups' => ['default' ]]
+        ));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
 
     }
 
